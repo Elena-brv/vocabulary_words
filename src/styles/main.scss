@@ -2,6 +2,95 @@
 @import "fonts";
 @import "typography";
 
-body {
-  background: $c-gray;
+html {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 40px;
+}
+
+h1 {
+  font-size: 40px;
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.words {
+
+  &_word {
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  &_underline {
+    display: inline-block;
+    border-bottom: 4px solid #000;
+  }
+
+  &_missed {
+    opacity: 0;
+    transition: all 0.5s;
+    color: red;
+
+    &.active {
+      opacity: 1;
+    }
+  }
+
+  &_images {
+    position: relative;
+  }
+
+  &_picture {
+    filter: grayscale(100%);
+    opacity: 0.3;
+    transition: all 1s;
+
+    &.active {
+      filter: grayscale(0%);
+      opacity: 1;
+    }
+
+    &.wrong {
+      transform: scale(0);
+      filter: grayscale(100%);
+    }
+  }
+
+  &_sad {
+    opacity: 0;
+    width: 70px;
+    height: 70px;
+    position: absolute;
+    top: calc(50% - 35px);
+    left: calc(50% - 35px);
+    transition: all 0.3s;
+
+    &.active {
+      opacity: 1;
+    }
+  }
+}
+
+.btn {
+  width: 80px;
+  height: 80px;
+  font-size: inherit;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.5s;
+
+  &:first-of-type {
+    margin-right: 30px;
+  }
+
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  &:focus {
+    outline: none;
+  }
 }
