@@ -2,6 +2,164 @@
 @import "fonts";
 @import "typography";
 
-body {
-  background: $c-gray;
+html {
+  font-family: Kurale, serif;
+  font-size: 36px;
+}
+
+h1 {
+  font-size: 44px;
+  font-family: inherit;
+  color: rgb(189, 27, 27);
+  margin: 15px 0;
+}
+
+p {
+  margin: 10px 0;
+}
+
+button {
+  font-family: inherit;
+  letter-spacing: 1px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.container {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  padding-bottom: 70px;
+}
+
+.words {
+
+  &_word {
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  &_underline {
+    display: inline-block;
+    border-bottom: 4px solid #000;
+  }
+
+  &_missed {
+    opacity: 0;
+    transition: all 0.5s;
+    color: red;
+
+    &.active {
+      opacity: 1;
+    }
+  }
+
+  &_images {
+    position: relative;
+  }
+
+  &_picture {
+    filter: grayscale(100%);
+    opacity: 0.3;
+    transition: all 1s;
+    max-height: 400px;
+
+    &.active {
+      filter: grayscale(0%);
+      opacity: 1;
+    }
+
+    &.wrong {
+      transform: scale(0);
+      filter: grayscale(100%);
+    }
+  }
+
+  &_sad {
+    opacity: 0;
+    width: 70px;
+    height: 70px;
+    position: absolute;
+    top: calc(50% - 35px);
+    left: calc(50% - 35px);
+    transition: all 0.3s;
+
+    &.active {
+      opacity: 1;
+    }
+  }
+}
+
+.btn {
+  width: 70px;
+  height: 70px;
+  font-size: inherit;
+  cursor: pointer;
+  transition: all 0.5s;
+  margin: 10px 15px;
+  background-color: rgb(219, 163, 180);
+  border: none;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.further {
+  position: absolute;
+  bottom: 50%;
+  right: 0;
+  padding: 15px 40px;
+  background-color: rgb(91, 163, 82);
+  color: #fff;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 20px;
+  transition: all 0.4s;
+
+  &:hover {
+    background-color: rgb(73, 129, 65);
+  }
+
+}
+
+.end {
+  position: absolute;
+  right: 0;
+  bottom: 40%;
+
+  padding: 15px 24px;
+  background-color: rgb(145, 51, 47);
+  color: #fff;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 14px;
+  transition: all 0.4s;
+
+  &:hover {
+    background-color: rgb(145, 78, 76);
+  }
+
+}
+
+.again {
+  display: none;
+  margin-top: 30px;
+  padding: 15px 40px;
+  background-color: rgb(91, 163, 82);
+  color: #fff;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 20px;
+  transition: all 0.4s;
+
+  &:hover {
+    background-color: rgb(73, 129, 65);
+  }
 }
