@@ -37,7 +37,7 @@ btnsRight.forEach(btn =>
     sadSmile.classList.remove('active');
     picture.classList.add('active');
     missedLetter.classList.add('active');
-    score.innerText = `Правильно: ${count}`;
+    score.innerText = `Правильно: ${count} з ${words.length}`;
   })
 );
 
@@ -67,3 +67,27 @@ btnsFurther.forEach(btn =>
     nextBlock.nextElementSibling.style.cssText = 'display: inline-block;';
   })
 );
+
+const btnEnd = document.querySelector('.end');
+// const results = document.querySelector('.results');
+const btnAgain = document.querySelector('.again');
+
+btnEnd.addEventListener('click', function(e) {
+  score.style.color = 'rgb(145, 51, 47)';
+  score.style.fontSize = '60px';
+  score.style.transition = 'all 0.4s';
+
+  words.forEach((word, i) => {
+    word.style.cssText = 'display: none';
+  });
+
+  btnsFurther.forEach((btn, i) => {
+    btn.style.cssText = 'display: none';
+  });
+  btnEnd.style.display = 'none';
+  btnAgain.style.display = 'inline-block';
+});
+
+btnAgain.addEventListener('click', function() {
+  window.location.reload();
+});

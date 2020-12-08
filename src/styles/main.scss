@@ -3,18 +3,35 @@
 @import "typography";
 
 html {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 40px;
+  font-family: Kurale, serif;
+  font-size: 36px;
 }
 
 h1 {
-  font-size: 40px;
+  font-size: 44px;
+  font-family: inherit;
+  color: rgb(189, 27, 27);
+  margin: 15px 0;
+}
+
+p {
+  margin: 10px 0;
+}
+
+button {
+  font-family: inherit;
+  letter-spacing: 1px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 .container {
-  max-width: 600px;
+  max-width: 700px;
   margin: 0 auto;
   text-align: center;
+  position: relative;
+  padding-bottom: 70px;
 }
 
 .words {
@@ -47,6 +64,7 @@ h1 {
     filter: grayscale(100%);
     opacity: 0.3;
     transition: all 1s;
+    max-height: 400px;
 
     &.active {
       filter: grayscale(0%);
@@ -75,16 +93,14 @@ h1 {
 }
 
 .btn {
-  width: 80px;
-  height: 80px;
+  width: 70px;
+  height: 70px;
   font-size: inherit;
-  border-radius: 10px;
   cursor: pointer;
   transition: all 0.5s;
-
-  &:first-of-type {
-    margin-right: 30px;
-  }
+  margin: 10px 15px;
+  background-color: rgb(219, 163, 180);
+  border: none;
 
   &:hover {
     transform: scale(1.1);
@@ -92,5 +108,58 @@ h1 {
 
   &:focus {
     outline: none;
+  }
+}
+
+.further {
+  position: absolute;
+  bottom: 50%;
+  right: 0;
+  padding: 15px 40px;
+  background-color: rgb(91, 163, 82);
+  color: #fff;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 20px;
+  transition: all 0.4s;
+
+  &:hover {
+    background-color: rgb(73, 129, 65);
+  }
+
+}
+
+.end {
+  position: absolute;
+  right: 0;
+  bottom: 40%;
+
+  padding: 15px 24px;
+  background-color: rgb(145, 51, 47);
+  color: #fff;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 14px;
+  transition: all 0.4s;
+
+  &:hover {
+    background-color: rgb(145, 78, 76);
+  }
+
+}
+
+.again {
+  display: none;
+  margin-top: 30px;
+  padding: 15px 40px;
+  background-color: rgb(91, 163, 82);
+  color: #fff;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 20px;
+  transition: all 0.4s;
+
+  &:hover {
+    background-color: rgb(73, 129, 65);
   }
 }
